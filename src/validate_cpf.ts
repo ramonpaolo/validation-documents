@@ -1,3 +1,14 @@
+/**
+ * 
+ * @param {string} cpf 11 characters
+ *  
+ * @returns {boolean} that represent if CPF is valid or not
+ * @example 
+ * const validCPF = validateCpf('36761664004')
+ * 
+ * if(validCPF) console.log('Valid CPF')
+ * else console.error('Invalid CPF')
+*/
 const validateCpf = (cpf: string) => {
     const lastDigits = cpf.slice(cpf.length-2)
 
