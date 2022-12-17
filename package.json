@@ -1,0 +1,16 @@
+{
+  "name": "validate-documents",
+  "version": "1.0.1",
+  "description": "Validate CPF and CNPJ",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Ramon Paolo Maram",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prepublish": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
