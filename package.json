@@ -7,7 +7,15 @@
   "files": [
     "dist"
   ],
-  "author": "Ramon Paolo Maram",
+  "author": {
+    "name": "Ramon Paolo Maram",
+    "url": "https://github.com/ramonpaolo"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "validation-documents",
+    "url": "https://github.com/ramonpaolo/validation-documents"
+  },
   "license": "MIT",
   "private": false,
   "scripts": {
