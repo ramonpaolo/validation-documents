@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "directory": "validation-documents",
-    "url": "https://github.com/ramonpaolo/validation-documents"
+    "url": "https://github.com/ramonpaolo/validation-documents.git"
   },
   "license": "MIT",
   "private": false,
