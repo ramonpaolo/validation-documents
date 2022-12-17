@@ -1,6 +1,6 @@
 {
   "name": "validate-documents",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validate CPF and CNPJ",
   "main": "dist/index.js",
   "types": "dist/",
