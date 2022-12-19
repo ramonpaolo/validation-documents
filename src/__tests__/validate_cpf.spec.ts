@@ -3,7 +3,7 @@ import { validateCpf } from '../index'
 describe('Validate CPF', () => {
 
     it('Valid CPF', () => {
-        const validCpf = '53259479821'
+        const validCpf = '64882616068'
         const isValidCPF = validateCpf(validCpf)
 
         expect(isValidCPF).toBeTruthy()
