@@ -1,6 +1,6 @@
 {
   "name": "validate-documents",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Validate CPF and CNPJ",
   "main": "dist/index.js",
   "types": "dist/types",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "prepublish": "tsc",
+    "prepublish": "rm -rf dist && tsc",
     "test": "jest"
   },
   "devDependencies": {
