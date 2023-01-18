@@ -33,6 +33,8 @@ const verificationFirstDigitCpf = (cpf: string) => {
 
     const penultimDigit = (sum * 10) % 11
 
+    if(penultimDigit === 10) return 0
+
     return penultimDigit
 }
 
@@ -48,6 +50,8 @@ const verificationLastDigitCpf = (cpf: string) => {
     }
 
     const lastDigit = (sum * 10) % 11
+
+    if(lastDigit === 10) return 0
 
     return lastDigit
 }
