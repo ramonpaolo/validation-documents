@@ -46,7 +46,7 @@ $ npm install validate-documents
 
 ## Exemple of use:
 
-After you install the package, you can use how this:
+### Validate Documents
 
 ```javascript
 import { validateCpf } from 'validate-documents'
@@ -57,6 +57,22 @@ if(isValidCpf) {
     // Follow the flow with valid CPF, how create user
 }else{
     // Follow the flow with invalid CPF, how return response with error and status code 400 
+}
+```
+
+### Create Fake Document Number
+
+```javascript
+import { createFakeCpf } from 'validate-documents'
+
+try {
+    const cpfCreated = createFakeCpf()
+    console.log('created CPF:', cpfCreated)
+} catch (error) {
+    console.error({
+        error_name: error.name, // Error
+        error_message: error.message, // Max retry to create fake cpf was hit
+    })
 }
 ```
 
