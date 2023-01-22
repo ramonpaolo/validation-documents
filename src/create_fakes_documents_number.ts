@@ -1,6 +1,10 @@
 import { validateCpf, validateCnpj } from './index'
 
-const createFakeCpf = (retry: number = 200) => {
+/**
+ * @param {number} [retry=200] retry - Param to set max retrys to create fake CPF
+ * @returns {string}
+ */
+const createFakeCpf = (retry: number = 200): string => {
     let retryAttempt = retry
 
     while (true) {
@@ -14,7 +18,11 @@ const createFakeCpf = (retry: number = 200) => {
     }
 }
 
-const createFakeCnpj = (retry: number = 200) => {
+/**
+ * @param {number} [retry=200] - Param to set max retrys to create fake CNPJ
+ * @returns {string}
+ */
+const createFakeCnpj = (retry: number = 200): string => {
     let retryAttempt = retry
 
     while (true) {
