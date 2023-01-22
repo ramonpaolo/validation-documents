@@ -16,6 +16,7 @@
   "exclude": [
     "node_modules",
     "jest.config.ts",
-    "src/__tests__"
+    "src/__tests__",
+    "dist/",
   ]
 }
