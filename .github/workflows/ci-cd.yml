@@ -1,0 +1,46 @@
+name: CI/CD
+
+on:
+  pull_request:
+    branches:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.17
+      
+      - name: Install Packages
+        run: yarn
+
+      - name: Run Tests
+        run: yarn test
+
+  publish_npm:
+    needs:
+      - run_tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.17
+          registry-url: https://registry.npmjs.org/
+      
+      - name: Install Packages
+        run: yarn
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
