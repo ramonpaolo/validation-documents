@@ -2,15 +2,16 @@
 
 <div align="center">
 
+[![Run Tests](https://github.com/ramonpaolo/validation-documents/actions/workflows/ci.yml/badge.svg)](https://github.com/ramonpaolo/validation-documents/actions/workflows/ci.yml)
 ![Code Size](https://img.shields.io/github/languages/code-size/ramonpaolo/validation-documents?style=flat-square)
-![Code Size](https://img.shields.io/npm/dm/validate-documents?style=flat-square)
-![Code Size](https://img.shields.io/npm/l/validate-documents?style=flat-square)
+![Downloads](https://img.shields.io/npm/dm/validate-documents?style=flat-square)
+![LICENSE](https://img.shields.io/npm/l/validate-documents?style=flat-square)
 
 </div>
 
 ---
 
-## Indice
+## Index
 - [What is it?](#what-is-it)
 - [What technologies this project use?](#what-technologies-this-project-use)
 - [How install it?](#how-install-it)
