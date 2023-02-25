@@ -1,15 +1,12 @@
-name: Run Tests
+name: Publish to NPM
 
 on:
-  pull_request:
-    branches:
-
   push:
-    branches:
-      - main
+    tags:
+      - 'v*.*.*'
 
 jobs:
-  run_tests:
+  publish_npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +15,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14.17
+          registry-url: https://registry.npmjs.org/
       
       - name: Install Packages
         run: yarn
 
-      - name: Run Tests
-        run: yarn test
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
