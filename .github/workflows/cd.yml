@@ -21,7 +21,7 @@ jobs:
       - name: Install Packages
         run: yarn
 
-      - uses: ramonpaolo/bump-version@v0.0.1
+      - uses: ramonpaolo/bump-version@v1.0.0
         with: 
           tag: ${{ github.ref_name }}
 
