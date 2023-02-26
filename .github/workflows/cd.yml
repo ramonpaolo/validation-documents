@@ -21,6 +21,10 @@ jobs:
       - name: Install Packages
         run: yarn
 
+      - uses: ramonpaolo/bump-version@v0.0.1
+        with: 
+          tag: ${{ github.ref_name }}
+
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
