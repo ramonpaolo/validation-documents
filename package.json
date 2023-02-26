@@ -19,7 +19,6 @@
   "license": "MIT",
   "private": false,
   "keywords": [
-    "validation-documents",
     "typescript"
   ],
   "scripts": {
