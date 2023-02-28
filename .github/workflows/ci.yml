@@ -23,6 +23,9 @@ jobs:
       - name: Install Packages
         run: yarn
 
+      - name: Analyze the format of Code
+        run: yarn linter
+
       - name: Run Tests
         run: yarn test
 
