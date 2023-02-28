@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "prepublish": "rm -rf dist && tsc",
-    "test": "jest --ci --reporters=default --reporters=jest-junit",
+    "test": "jest ./src --ci --reporters=default --reporters=jest-junit",
     "linter": "yarn eslint ./src"
   },
   "devDependencies": {
