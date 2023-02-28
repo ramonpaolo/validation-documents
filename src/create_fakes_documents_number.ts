@@ -5,17 +5,17 @@ import { validateCpf, validateCnpj } from './index'
  * @returns {string}
  */
 const createFakeCpf = (retry: number = 200): string => {
-    let retryAttempt = retry
+  let retryAttempt = retry
 
-    while (true) {
-        const randomNumber = Math.floor((Math.random() * 10000000000) + 10000000000).toString()
+  while (true) {
+    const randomNumber = Math.floor((Math.random() * 10000000000) + 10000000000).toString()
 
-        const fakeCpf = validateCpf(randomNumber)
+    const fakeCpf = validateCpf(randomNumber)
 
-        if (fakeCpf) return randomNumber
-        else if (retryAttempt === 0) throw Error('Max retry to create fake cpf was hit')
-        retryAttempt--
-    }
+    if (fakeCpf) return randomNumber
+    else if (retryAttempt === 0) throw Error('Max retry to create fake cpf was hit')
+    retryAttempt--
+  }
 }
 
 /**
@@ -23,20 +23,20 @@ const createFakeCpf = (retry: number = 200): string => {
  * @returns {string}
  */
 const createFakeCnpj = (retry: number = 200): string => {
-    let retryAttempt = retry
+  let retryAttempt = retry
 
-    while (true) {
-        const randomNumber = Math.floor((Math.random() * 10000000000000) + 10000000000000).toString()
+  while (true) {
+    const randomNumber = Math.floor((Math.random() * 10000000000000) + 10000000000000).toString()
 
-        const fakeCnpj = validateCnpj(randomNumber)
+    const fakeCnpj = validateCnpj(randomNumber)
 
-        if (fakeCnpj) return randomNumber
-        else if (retryAttempt === 0) throw Error('Max retry to create fake cnpj was hit')
-        retryAttempt--
-    }
+    if (fakeCnpj) return randomNumber
+    else if (retryAttempt === 0) throw Error('Max retry to create fake cnpj was hit')
+    retryAttempt--
+  }
 }
 
 export {
-    createFakeCpf,
-    createFakeCnpj,
+  createFakeCpf,
+  createFakeCnpj
 }
