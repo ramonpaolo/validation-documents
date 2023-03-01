@@ -9,10 +9,11 @@ describe('Validate CPF', () => {
     expect(isValidCPF).toBeTruthy()
   })
 
-  it('when CPF is invalid, return false', () => {
-    const invalidCpf = '36761664002'
-    const isValidCPF = validateCpf(invalidCpf)
+  const invalidCPFs = ['13686752402', '36761664002', '17849917424', '17024119747', '12665916506']
 
-    expect(isValidCPF).not.toBeTruthy()
+  it.each(invalidCPFs)('when CPF(%p) is invalid, return false', (invalidCPF) => {
+    const isValidCPF = validateCpf(invalidCPF)
+
+    expect(isValidCPF).toBeFalsy()
   })
 })
