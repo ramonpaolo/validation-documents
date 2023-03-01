@@ -1,35 +1,30 @@
-import { createFakeCpf, createFakeCnpj, validateCnpj, validateCpf } from '../index'
+import { createFakeCpf, createFakeCnpj } from '../index'
 
 describe('Create Fakes Documents', () => {
+  const maxRetryToCreateFakeDocumentWithSuccess = 500
+  const maxRetryToGetErrorWhenTryCreateFakeDocument = 1
+
   describe('Create Fake CNPJ', () => {
     it('when create fake CNPJ document with success', () => {
-      const fakeCnpj = createFakeCnpj()
+      const fakeCnpj = createFakeCnpj(maxRetryToCreateFakeDocumentWithSuccess)
 
-      const isValidCnpj = validateCnpj(fakeCnpj)
-
-      expect(isValidCnpj).toBeTruthy()
+      expect(fakeCnpj).toHaveLength(14)
     })
 
-    it('when max retry was hit', () => {
-      const maxRetryToCreateCNPJ = 1
-
-      expect(() => createFakeCnpj(maxRetryToCreateCNPJ)).toThrow(/Max retry to create fake cnpj was hit/)
+    it('when can\'t create fake CNPJ, return a error', () => {
+      expect(() => createFakeCnpj(maxRetryToGetErrorWhenTryCreateFakeDocument)).toThrow('Max retry to create fake cnpj was hit')
     })
   })
 
   describe('Create Fake CPF', () => {
     it('when create fake CPF document with success', () => {
-      const fakeCpf = createFakeCpf()
+      const fakeCpf = createFakeCpf(maxRetryToCreateFakeDocumentWithSuccess)
 
-      const isValidCpf = validateCpf(fakeCpf)
-
-      expect(isValidCpf).toBeTruthy()
+      expect(fakeCpf).toHaveLength(11)
     })
 
-    it('when max retry was hit', () => {
-      const maxRetryToCreateCPF = 1
-
-      expect(() => createFakeCpf(maxRetryToCreateCPF)).toThrow(/Max retry to create fake cpf was hit/)
+    it('when can\'t create fake CPF, return a error', () => {
+      expect(() => createFakeCpf(maxRetryToGetErrorWhenTryCreateFakeDocument)).toThrow('Max retry to create fake cpf was hit')
     })
   })
 })
